@@ -1,27 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Breaking the Silence</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================
-   COLOR PALETTE
-========================= */
-/*
-Dark Blue: #1E3A5F
-Soft Blue: #4DA8DA
-Mint Green: #7ED6C2
-Light Background: #F4F9FC
-Soft Purple: #C8B6FF
-White: #FFFFFF
-*/
 
 /* =========================
    GENERAL
@@ -51,7 +42,7 @@ html{
 header{
     background:linear-gradient(135deg,#1E3A5F,#4DA8DA);
     color:white;
-    padding:60px 20px;
+    padding:80px 20px;
     text-align:center;
     position:relative;
     overflow:hidden;
@@ -60,12 +51,12 @@ header{
 header::before{
     content:'';
     position:absolute;
-    width:300px;
-    height:300px;
+    width:350px;
+    height:350px;
     background:rgba(255,255,255,0.08);
     border-radius:50%;
-    top:-100px;
-    left:-80px;
+    top:-120px;
+    left:-100px;
 }
 
 header::after{
@@ -84,6 +75,7 @@ header h1{
     margin-bottom:20px;
     position:relative;
     z-index:2;
+    line-height:1.3;
 }
 
 .authors{
@@ -94,33 +86,34 @@ header h1{
 }
 
 /* =========================
-   MAIN CONTAINER
+   CONTAINER
 ========================= */
 
 .container{
     width:90%;
     max-width:1300px;
     margin:auto;
-    padding:50px 0;
+    padding:60px 0;
 }
 
 /* =========================
-   SECTION TITLES
+   TITLES
 ========================= */
 
 .section-title{
     text-align:center;
-    margin-bottom:40px;
+    margin-bottom:50px;
 }
 
 .section-title h2{
-    font-size:2.2rem;
+    font-size:2.3rem;
     color:#1E3A5F;
+    margin-bottom:10px;
 }
 
 .section-title p{
     color:#5B6B7B;
-    margin-top:10px;
+    font-size:1rem;
 }
 
 /* =========================
@@ -129,16 +122,16 @@ header h1{
 
 .overview{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
-    margin-bottom:80px;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    margin-bottom:90px;
 }
 
 .overview-card{
     background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,0.08);
     transition:0.4s;
 }
 
@@ -146,14 +139,24 @@ header h1{
     transform:translateY(-10px);
 }
 
-.overview-card h3{
-    margin-bottom:15px;
-    color:#4DA8DA;
-    font-size:1.5rem;
+.overview-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
 }
 
-.overview-card p{
-    line-height:1.7;
+.overview-content{
+    padding:30px;
+}
+
+.overview-content h3{
+    color:#4DA8DA;
+    margin-bottom:15px;
+    font-size:1.6rem;
+}
+
+.overview-content p{
+    line-height:1.8;
 }
 
 /* =========================
@@ -162,75 +165,119 @@ header h1{
 
 .activities-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
     gap:30px;
-    margin-bottom:80px;
+    margin-bottom:90px;
 }
 
 .activity-card{
-    position:relative;
     background:white;
     border-radius:25px;
-    padding:35px 25px;
     overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,0.08);
+    transition:0.5s;
     cursor:pointer;
-    transition:0.4s;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
 .activity-card:hover{
     transform:translateY(-12px) scale(1.02);
-    background:linear-gradient(135deg,#4DA8DA,#7ED6C2);
-    color:white;
+}
+
+.activity-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+
+.activity-body{
+    padding:30px;
 }
 
 .activity-number{
     width:60px;
     height:60px;
-    border-radius:50%;
     background:#C8B6FF;
+    border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
     font-size:1.5rem;
     font-weight:bold;
-    margin-bottom:20px;
-    transition:0.4s;
-}
-
-.activity-card:hover .activity-number{
-    background:white;
     color:#1E3A5F;
+    margin-bottom:20px;
 }
 
-.activity-card h3{
+.activity-body h3{
     margin-bottom:15px;
     font-size:1.4rem;
 }
 
 .activity-content{
-    margin-top:15px;
-    line-height:1.7;
     opacity:0;
     max-height:0;
     overflow:hidden;
     transition:0.5s;
+    line-height:1.8;
 }
 
 .activity-card:hover .activity-content{
     opacity:1;
-    max-height:500px;
-}
-
-.click-text{
+    max-height:1000px;
     margin-top:15px;
-    font-size:0.9rem;
-    font-weight:600;
-    color:#4DA8DA;
 }
 
-.activity-card:hover .click-text{
+.hover-text{
+    color:#4DA8DA;
+    font-weight:600;
+}
+
+/* =========================
+   INFO BOXES
+========================= */
+
+.info-section{
+    margin-bottom:80px;
+}
+
+.info-box{
+    background:linear-gradient(135deg,#4DA8DA,#7ED6C2);
     color:white;
+    border-radius:30px;
+    padding:50px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.12);
+}
+
+.info-box h3{
+    font-size:2rem;
+    margin-bottom:20px;
+}
+
+.info-box p{
+    line-height:2;
+    font-size:1.05rem;
+}
+
+/* =========================
+   REFERENCES
+========================= */
+
+.references{
+    background:white;
+    border-radius:25px;
+    padding:40px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.08);
+    margin-bottom:80px;
+}
+
+.references h3{
+    margin-bottom:25px;
+    font-size:2rem;
+    color:#1E3A5F;
+}
+
+.references p{
+    line-height:2;
+    margin-bottom:20px;
 }
 
 /* =========================
@@ -241,14 +288,15 @@ header h1{
     background:linear-gradient(135deg,#1E3A5F,#4DA8DA);
     color:white;
     border-radius:30px;
-    padding:50px;
+    padding:60px;
     text-align:center;
     box-shadow:0 15px 35px rgba(0,0,0,0.15);
+    margin-bottom:80px;
 }
 
 .conclusion-box p{
-    font-size:1.1rem;
     line-height:2;
+    font-size:1.1rem;
 }
 
 /* =========================
@@ -256,13 +304,12 @@ header h1{
 ========================= */
 
 footer{
-    margin-top:80px;
     background:#1E3A5F;
     color:white;
     text-align:center;
-    padding:25px;
-    font-size:0.95rem;
+    padding:30px;
     line-height:1.8;
+    font-size:0.95rem;
 }
 
 /* =========================
@@ -279,13 +326,15 @@ footer{
         font-size:1.8rem;
     }
 
+    .info-box,
     .conclusion-box{
-        padding:30px;
+        padding:35px;
     }
 
 }
 
 </style>
+
 </head>
 
 <body>
@@ -296,15 +345,14 @@ footer{
 
 <header>
 
-    <h1>
-        Breaking the Silence:
-        Overcoming Speaking Anxiety
-        through AI and Games
-    </h1>
+<h1>
+Breaking the Silence:
+Overcoming Speaking Anxiety through AI and Games
+</h1>
 
-    <div class="authors">
-        Kellys De La Ossa Figueroa & Dayana Ortiz Ríos
-    </div>
+<div class="authors">
+Kellys De La Ossa Figueroa & Dayana Ortiz Ríos
+</div>
 
 </header>
 
@@ -314,191 +362,426 @@ footer{
 
 <div class="container">
 
-    <!-- PROJECT OVERVIEW -->
+<!-- =========================
+     OVERVIEW
+========================= -->
 
-    <section>
+<section>
 
-        <div class="section-title">
-            <h2>Project Overview</h2>
-            <p>Transforming virtual English learning experiences.</p>
-        </div>
+<div class="section-title">
+<h2>Project Overview</h2>
+<p>Transforming virtual English learning experiences.</p>
+</div>
 
-        <div class="overview">
+<div class="overview">
 
-            <div class="overview-card">
-                <h3>Problem</h3>
-                <p>
-                    Learner anxiety and lack of confidence when speaking in English.
-                </p>
-            </div>
+<div class="overview-card">
 
-            <div class="overview-card">
-                <h3>Context</h3>
-                <p>
-                    Synchronous virtual classes (STT).
-                </p>
-            </div>
+<img src="images/speaking-anxiety.jpg">
 
-        </div>
+<div class="overview-content">
 
-    </section>
+<h3>Problem</h3>
 
-    <!-- ACTIVITIES -->
+<p>
+Learner anxiety and lack of confidence when speaking in English.
+</p>
 
-    <section>
+</div>
 
-        <div class="section-title">
-            <h2>The 5 Innovative Activities</h2>
-            <p>Hover over each card to discover the strategy.</p>
-        </div>
+</div>
 
-        <div class="activities-grid">
+<div class="overview-card">
 
-            <!-- ACTIVITY 1 -->
+<img src="images/online-classroom.jpg">
 
-            <div class="activity-card">
+<div class="overview-content">
 
-                <div class="activity-number">1</div>
+<h3>Context</h3>
 
-                <h3>Anonymous Gamified Grammar</h3>
+<p>
+Synchronous virtual classes (STT).
+</p>
 
-                <div class="click-text">
-                    Hover to read
-                </div>
+</div>
 
-                <div class="activity-content">
+</div>
 
-                    <p><strong>Objective:</strong> Practice grammar without feeling stressed.</p>
+</div>
 
-                    <br>
+</section>
 
-                    <p><strong>Tools:</strong> Kahoot / Quizizz</p>
+<!-- =========================
+     ACTIVITIES
+========================= -->
 
-                </div>
+<section>
 
-            </div>
+<div class="section-title">
 
-            <!-- ACTIVITY 2 -->
+<h2>The 5 Innovative Activities</h2>
 
-            <div class="activity-card">
+<p>
+Hover over each card to discover the strategy.
+</p>
 
-                <div class="activity-number">2</div>
+</div>
 
-                <h3>My AI Conversation Buddy</h3>
+<div class="activities-grid">
 
-                <div class="click-text">
-                    Hover to read
-                </div>
+<!-- ACTIVITY 1 -->
 
-                <div class="activity-content">
+<div class="activity-card">
 
-                    <p><strong>Objective:</strong> Practice speaking privately to build confidence.</p>
+<img src="images/competition.jpg">
 
-                    <br>
+<div class="activity-body">
 
-                    <p><strong>Tools:</strong> ChatGPT / Gemini</p>
+<div class="activity-number">1</div>
 
-                </div>
+<h3>Anonymous Gamified Grammar</h3>
 
-            </div>
+<div class="hover-text">
+Hover to read
+</div>
 
-            <!-- ACTIVITY 3 -->
+<div class="activity-content">
 
-            <div class="activity-card">
+<p>
+<strong>Objective:</strong>
+Practice grammar without feeling stressed.
+</p>
 
-                <div class="activity-number">3</div>
+<br>
 
-                <h3>Asynchronous Video Introductions</h3>
+<p>
+<strong>Tools:</strong>
+Kahoot / Quizizz
+</p>
 
-                <div class="click-text">
-                    Hover to read
-                </div>
+<br>
 
-                <div class="activity-content">
+<p>
+<strong>Description:</strong><br>
+1. Teacher creates an interactive grammar quiz.<br>
+2. Students join using smartphones and a secret nickname.<br>
+3. Students answer within a time limit.<br>
+4. Teacher explains common mistakes to the class.
+</p>
 
-                    <p><strong>Objective:</strong> Produce spoken language at own pace.</p>
+</div>
 
-                    <br>
+</div>
 
-                    <p><strong>Tools:</strong> Flip App</p>
+</div>
 
-                </div>
+<!-- ACTIVITY 2 -->
 
-            </div>
+<div class="activity-card">
 
-            <!-- ACTIVITY 4 -->
+<img src="images/ai-buddy.jpg">
 
-            <div class="activity-card">
+<div class="activity-body">
 
-                <div class="activity-number">4</div>
+<div class="activity-number">2</div>
 
-                <h3>Collaborative Breakout Rooms</h3>
+<h3>My AI Conversation Buddy</h3>
 
-                <div class="click-text">
-                    Hover to read
-                </div>
+<div class="hover-text">
+Hover to read
+</div>
 
-                <div class="activity-content">
+<div class="activity-content">
 
-                    <p><strong>Objective:</strong> Teamwork to create short dialogues.</p>
+<p>
+<strong>Objective:</strong>
+Practice speaking privately to build confidence.
+</p>
 
-                    <br>
+<br>
 
-                    <p><strong>Tools:</strong> Padlet / Teams</p>
+<p>
+<strong>Tools:</strong>
+ChatGPT / Gemini
+</p>
 
-                </div>
+<br>
 
-            </div>
+<p>
+<strong>Description:</strong><br>
+1. Teacher assigns a speaking topic.<br>
+2. Students open an AI voice chatbot at home.<br>
+3. Students talk to the AI for 3 minutes.<br>
+4. AI provides instant feedback.<br>
+5. Students submit a screenshot of the feedback.
+</p>
 
-            <!-- ACTIVITY 5 -->
+</div>
 
-            <div class="activity-card">
+</div>
 
-                <div class="activity-number">5</div>
+</div>
 
-                <h3>Interactive Storytelling</h3>
+<!-- ACTIVITY 3 -->
 
-                <div class="click-text">
-                    Hover to read
-                </div>
+<div class="activity-card">
 
-                <div class="activity-content">
+<img src="images/video-intro.jpg">
 
-                    <p><strong>Objective:</strong> Collaboratively create and narrate short stories.</p>
+<div class="activity-body">
 
-                    <br>
+<div class="activity-number">3</div>
 
-                    <p><strong>Tools:</strong> Google Docs / Vocaroo</p>
+<h3>Asynchronous Video Introductions</h3>
 
-                </div>
+<div class="hover-text">
+Hover to read
+</div>
 
-            </div>
+<div class="activity-content">
 
-        </div>
+<p>
+<strong>Objective:</strong>
+Produce spoken language at own pace.
+</p>
 
-    </section>
+<br>
 
-    <!-- CONCLUSIONS -->
+<p>
+<strong>Tools:</strong>
+Flip App
+</p>
 
-    <section>
+<br>
 
-        <div class="section-title">
-            <h2>Conclusions</h2>
-        </div>
+<p>
+<strong>Description:</strong><br>
+1. Teacher posts a prompt on a digital board.<br>
+2. Students record a 1-minute video.<br>
+3. Upload the final video.<br>
+4. Watch and leave positive comments.
+</p>
 
-        <div class="conclusion-box">
+</div>
 
-            <p>
-                Integrates Gamification and AI to lower the
-                <strong>'Affective Filter'</strong> (Krashen).
-                <br><br>
-                Transforms intimidating virtual classes into
-                safe, dynamic, and private practice environments.
-            </p>
+</div>
 
-        </div>
+</div>
 
-    </section>
+<!-- ACTIVITY 4 -->
+
+<div class="activity-card">
+
+<img src="images/breakout-rooms.jpg">
+
+<div class="activity-body">
+
+<div class="activity-number">4</div>
+
+<h3>Collaborative Breakout Rooms</h3>
+
+<div class="hover-text">
+Hover to read
+</div>
+
+<div class="activity-content">
+
+<p>
+<strong>Objective:</strong>
+Teamwork to create short dialogues.
+</p>
+
+<br>
+
+<p>
+<strong>Tools:</strong>
+Padlet / Teams
+</p>
+
+<br>
+
+<p>
+<strong>Description:</strong><br>
+1. Teacher divides students into breakout rooms.<br>
+2. Students discuss and write a short story.<br>
+3. Teacher visits rooms to monitor.<br>
+4. Groups share ideas with the class.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ACTIVITY 5 -->
+
+<div class="activity-card">
+
+<img src="images/storytelling.jpg">
+
+<div class="activity-body">
+
+<div class="activity-number">5</div>
+
+<h3>Interactive Storytelling</h3>
+
+<div class="hover-text">
+Hover to read
+</div>
+
+<div class="activity-content">
+
+<p>
+<strong>Objective:</strong>
+Collaboratively create and narrate short stories.
+</p>
+
+<br>
+
+<p>
+<strong>Tools:</strong>
+Google Docs / Vocaroo
+</p>
+
+<br>
+
+<p>
+<strong>Description:</strong><br>
+1. Students use a collaborative document.<br>
+2. Each records themselves narrating a part.<br>
+3. Group provides peer feedback.<br>
+4. Optional sharing with the class.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     ASSESSMENT PLAN
+========================= -->
+
+<section class="info-section">
+
+<div class="info-box">
+
+<h3>Assessment Plan</h3>
+
+<p>
+
+<strong>Methods:</strong><br><br>
+
+Continuous Formative Assessment.<br><br>
+
+Real-time feedback in gamified activities (Kahoot).<br><br>
+
+Peer-assessment and self-assessment for speaking activities
+(AI Chatbot and Video Boards), prior to the teacher's final feedback.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- =========================
+     IMPLEMENTATION PLAN
+========================= -->
+
+<section class="info-section">
+
+<div class="info-box">
+
+<h3>Implementation Plan</h3>
+
+<p>
+
+<strong>Timeline:</strong><br><br>
+
+16-Week progressive plan.<br><br>
+
+Weeks 1-4:
+Activity 1 (Anonymous Gamified Grammar).<br><br>
+
+Weeks 5-10:
+Activities 2 and 3
+(AI Conversation Buddy &
+Asynchronous Video Introductions).<br><br>
+
+Weeks 11-16:
+Activities 4 and 5
+(Interactive Storytelling with Peer Feedback &
+Collaborative Breakout Rooms).
+
+</p>
+
+</div>
+
+</section>
+
+<!-- =========================
+     CONCLUSIONS
+========================= -->
+
+<section>
+
+<div class="section-title">
+
+<h2>Conclusions</h2>
+
+</div>
+
+<div class="conclusion-box">
+
+<p>
+
+Integrates Gamification and AI to lower the
+<strong>'Affective Filter'</strong> (Krashen).
+
+<br><br>
+
+Transforms intimidating virtual classes into safe,
+dynamic, and private practice environments.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- =========================
+     REFERENCES
+========================= -->
+
+<section>
+
+<div class="references">
+
+<h3>References</h3>
+
+<p>
+Edmett, A., Ichaporia, N., Crompton, H., & Crichton, R. (2023).
+<i>Artificial intelligence and English language teaching:
+Preparing for the future.</i> British Council.
+</p>
+
+<p>
+Laura-De La Cruz, K. M., et al. (2023).
+<i>Use of Gamification in English Learning in Higher Education:
+A Systematic Review.</i>
+Journal of Technology and Science Education, 13(2), 480–497.
+</p>
+
+</div>
+
+</section>
 
 </div>
 
@@ -508,8 +791,8 @@ footer{
 
 <footer>
 
-    Todos los derechos reservados © Kellys De La Ossa.
-    Esta página interactiva fue elaborada con IA ChatGPT.
+Todos los derechos reservados © Kellys De La Ossa.
+Esta página interactiva fue elaborada con IA ChatGPT.
 
 </footer>
 
