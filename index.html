@@ -20,6 +20,10 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:'Poppins', sans-serif;
     background:#F4F9FC;
@@ -27,14 +31,37 @@ body{
     overflow-x:hidden;
 }
 
-html{
-    scroll-behavior:smooth;
+/* =========================
+LOGO SUPERIOR
+========================= */
+
+.logo-container{
+    width:100%;
+    background:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    padding:0;
+    margin:0;
 }
+
+.unad-logo{
+    width:100%;
+    max-width:1600px;
+    height:auto;
+    object-fit:contain;
+    display:block;
+}
+
+/* =========================
+HEADER
+========================= */
 
 header{
     background:linear-gradient(135deg,#1E3A5F,#4DA8DA);
     color:white;
-    padding:60px 20px 80px;
+    padding:70px 20px 90px;
     text-align:center;
     position:relative;
     overflow:hidden;
@@ -45,40 +72,28 @@ header::before{
     position:absolute;
     width:350px;
     height:350px;
-    background:rgba(255,255,255,0.08);
+    background:rgba(255,255,255,0.07);
     border-radius:50%;
-    top:-120px;
-    left:-100px;
+    top:-150px;
+    left:-120px;
 }
 
 header::after{
     content:'';
     position:absolute;
-    width:250px;
-    height:250px;
-    background:rgba(255,255,255,0.08);
+    width:280px;
+    height:280px;
+    background:rgba(255,255,255,0.07);
     border-radius:50%;
-    bottom:-100px;
-    right:-80px;
-}
-
-.unad-logo{
-    width:180px;
-    max-width:90%;
-    margin-bottom:25px;
-    position:relative;
-    z-index:2;
-    background:white;
-    padding:12px 20px;
-    border-radius:18px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    bottom:-120px;
+    right:-100px;
 }
 
 .header-academic{
-    margin-bottom:30px;
-    line-height:2;
     position:relative;
     z-index:2;
+    margin-bottom:35px;
+    line-height:2;
 }
 
 .header-academic p{
@@ -92,10 +107,10 @@ header::after{
 
 header h1{
     font-size:3rem;
-    margin-bottom:20px;
+    line-height:1.3;
+    margin-bottom:25px;
     position:relative;
     z-index:2;
-    line-height:1.3;
 }
 
 .authors{
@@ -103,32 +118,36 @@ header h1{
     font-weight:300;
     position:relative;
     z-index:2;
+    margin-bottom:40px;
 }
 
 .header-image{
-    width:320px;
+    width:350px;
     max-width:90%;
-    margin-top:40px;
     border-radius:25px;
-    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+    box-shadow:0 15px 35px rgba(0,0,0,0.25);
     position:relative;
     z-index:2;
 }
+
+/* =========================
+GENERAL
+========================= */
 
 .container{
     width:90%;
     max-width:1300px;
     margin:auto;
-    padding:60px 0;
+    padding:80px 0;
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:50px;
+    margin-bottom:55px;
 }
 
 .section-title h2{
-    font-size:2.3rem;
+    font-size:2.5rem;
     color:#1E3A5F;
     margin-bottom:10px;
 }
@@ -138,18 +157,22 @@ header h1{
     font-size:1rem;
 }
 
+/* =========================
+PROJECT OVERVIEW
+========================= */
+
 .overview{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
-    margin-bottom:90px;
+    gap:35px;
+    margin-bottom:100px;
 }
 
 .overview-card{
     background:white;
     border-radius:25px;
     overflow:hidden;
-    box-shadow:0 12px 30px rgba(0,0,0,0.08);
+    box-shadow:0 15px 35px rgba(0,0,0,0.08);
     transition:0.4s;
 }
 
@@ -170,25 +193,29 @@ header h1{
 .overview-content h3{
     color:#4DA8DA;
     margin-bottom:15px;
-    font-size:1.6rem;
+    font-size:1.7rem;
 }
 
 .overview-content p{
     line-height:1.9;
 }
 
+/* =========================
+ACTIVITIES
+========================= */
+
 .activities-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
-    margin-bottom:90px;
+    gap:35px;
+    margin-bottom:100px;
 }
 
 .activity-card{
     background:white;
     border-radius:25px;
     overflow:hidden;
-    box-shadow:0 12px 30px rgba(0,0,0,0.08);
+    box-shadow:0 15px 35px rgba(0,0,0,0.08);
     transition:0.5s;
     cursor:pointer;
 }
@@ -210,14 +237,13 @@ header h1{
 .activity-number{
     width:60px;
     height:60px;
-    background:#C8B6FF;
     border-radius:50%;
+    background:#C8B6FF;
     display:flex;
-    align-items:center;
     justify-content:center;
-    font-size:1.5rem;
+    align-items:center;
+    font-size:1.4rem;
     font-weight:bold;
-    color:#1E3A5F;
     margin-bottom:20px;
 }
 
@@ -226,40 +252,44 @@ header h1{
     font-size:1.4rem;
 }
 
-.activity-content{
-    opacity:0;
-    max-height:0;
-    overflow:hidden;
-    transition:0.5s;
-    line-height:1.8;
-}
-
-.activity-card:hover .activity-content{
-    opacity:1;
-    max-height:1200px;
-    margin-top:15px;
-}
-
 .hover-text{
     color:#4DA8DA;
     font-weight:600;
 }
 
+.activity-content{
+    opacity:0;
+    max-height:0;
+    overflow:hidden;
+    transition:0.5s;
+    line-height:1.9;
+}
+
+.activity-card:hover .activity-content{
+    opacity:1;
+    max-height:1200px;
+    margin-top:20px;
+}
+
+/* =========================
+INFO BOXES
+========================= */
+
 .info-section{
-    margin-bottom:80px;
+    margin-bottom:90px;
 }
 
 .info-box{
     background:linear-gradient(135deg,#4DA8DA,#7ED6C2);
     color:white;
     border-radius:30px;
-    padding:50px;
-    box-shadow:0 15px 35px rgba(0,0,0,0.12);
+    padding:55px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.15);
 }
 
 .info-box h3{
     font-size:2rem;
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 .info-box p{
@@ -267,14 +297,18 @@ header h1{
     font-size:1.05rem;
 }
 
+/* =========================
+CONCLUSIONS
+========================= */
+
 .conclusion-box{
     background:linear-gradient(135deg,#1E3A5F,#4DA8DA);
     color:white;
     border-radius:30px;
     padding:60px;
     text-align:center;
+    margin-bottom:90px;
     box-shadow:0 15px 35px rgba(0,0,0,0.15);
-    margin-bottom:80px;
 }
 
 .conclusion-box p{
@@ -282,18 +316,21 @@ header h1{
     font-size:1.1rem;
 }
 
+/* =========================
+REFERENCES
+========================= */
+
 .references{
     background:white;
     border-radius:25px;
-    padding:40px;
-    box-shadow:0 12px 30px rgba(0,0,0,0.08);
-    margin-bottom:80px;
+    padding:45px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.08);
+    margin-bottom:90px;
 }
 
 .references h3{
-    margin-bottom:25px;
     font-size:2rem;
-    color:#1E3A5F;
+    margin-bottom:25px;
 }
 
 .references p{
@@ -301,13 +338,38 @@ header h1{
     margin-bottom:20px;
 }
 
+/* =========================
+FOOTER
+========================= */
+
 footer{
     background:#1E3A5F;
     color:white;
     text-align:center;
-    padding:30px;
+    padding:35px;
     line-height:1.8;
     font-size:0.95rem;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    header h1{
+        font-size:2rem;
+    }
+
+    .section-title h2{
+        font-size:2rem;
+    }
+
+    .info-box,
+    .conclusion-box{
+        padding:35px;
+    }
+
 }
 
 </style>
@@ -316,9 +378,21 @@ footer{
 
 <body>
 
-<header>
+<!-- =========================
+LOGO SUPERIOR
+========================= -->
 
-<img src="images/UNAD_logo.png" class="unad-logo">
+<div class="logo-container">
+
+<img src="images/UNAD_logo.png" alt="Logo UNAD" class="unad-logo">
+
+</div>
+
+<!-- =========================
+HEADER
+========================= -->
+
+<header>
 
 <div class="header-academic">
 
@@ -331,12 +405,16 @@ footer{
 </div>
 
 <h1>
+
 Breaking the Silence:
 Overcoming Speaking Anxiety through AI and Games
+
 </h1>
 
 <div class="authors">
+
 Kellys De La Ossa Figueroa & Dayana Ortiz Ríos
+
 </div>
 
 <img src="images/AIEDUCATIONILLUSTRATION.jpg" class="header-image">
@@ -345,11 +423,18 @@ Kellys De La Ossa Figueroa & Dayana Ortiz Ríos
 
 <div class="container">
 
+<!-- =========================
+PROJECT OVERVIEW
+========================= -->
+
 <section>
 
 <div class="section-title">
+
 <h2>Project Overview</h2>
+
 <p>Transforming virtual English learning experiences.</p>
+
 </div>
 
 <div class="overview">
@@ -363,7 +448,9 @@ Kellys De La Ossa Figueroa & Dayana Ortiz Ríos
 <h3>Problem</h3>
 
 <p>
+
 Learner anxiety and lack of confidence when speaking in English.
+
 </p>
 
 </div>
@@ -379,7 +466,9 @@ Learner anxiety and lack of confidence when speaking in English.
 <h3>Context</h3>
 
 <p>
+
 The problem occurs in synchronous virtual classes, specifically during English STT (Student Talking Time) sessions. In these digital environments, adult learners face a live audience of many unknown peers. This situation causes high performance anxiety and fear of public mistakes, which raises their affective filter and limits their active speaking practice opportunities.
+
 </p>
 
 </div>
@@ -390,19 +479,23 @@ The problem occurs in synchronous virtual classes, specifically during English S
 
 </section>
 
+<!-- =========================
+ACTIVITIES
+========================= -->
+
 <section>
 
 <div class="section-title">
 
 <h2>The 5 Innovative Activities</h2>
 
-<p>
-Hover over each card to discover the strategy.
-</p>
+<p>Hover over each card to discover the strategy.</p>
 
 </div>
 
 <div class="activities-grid">
+
+<!-- ACTIVITY 1 -->
 
 <div class="activity-card">
 
@@ -415,31 +508,51 @@ Hover over each card to discover the strategy.
 <h3>Anonymous Gamified Grammar</h3>
 
 <div class="hover-text">
+
 Hover to read
+
 </div>
 
 <div class="activity-content">
 
 <p>
+
 <strong>Objective:</strong>
 Practice grammar without feeling stressed.
+
 </p>
 
 <br>
 
 <p>
+
 <strong>Tools:</strong>
 Kahoot / Quizizz
+
 </p>
 
 <br>
 
 <p>
-<strong>Description:</strong><br>
-1. Teacher creates an interactive grammar quiz.<br>
-2. Students join using anonymous nicknames.<br>
-3. Students answer within a time limit.<br>
-4. Teacher explains common mistakes.
+
+<strong>Description:</strong>
+
+<br><br>
+
+1. Teacher creates an interactive grammar quiz.
+
+<br>
+
+2. Students join using smartphones and a secret nickname.
+
+<br>
+
+3. Students answer within a time limit.
+
+<br>
+
+4. Teacher explains common mistakes to the class.
+
 </p>
 
 </div>
@@ -448,11 +561,281 @@ Kahoot / Quizizz
 
 </div>
 
-<!-- LAS DEMÁS ACTIVIDADES CONTINÚAN IGUAL -->
+<!-- ACTIVITY 2 -->
+
+<div class="activity-card">
+
+<img src="images/STUDENTTALKING2AI.jpg">
+
+<div class="activity-body">
+
+<div class="activity-number">2</div>
+
+<h3>My AI Conversation Buddy</h3>
+
+<div class="hover-text">
+
+Hover to read
+
+</div>
+
+<div class="activity-content">
+
+<p>
+
+<strong>Objective:</strong>
+Practice speaking privately to build confidence.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Tools:</strong>
+ChatGPT / Gemini
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Description:</strong>
+
+<br><br>
+
+1. Teacher assigns a speaking topic.
+
+<br>
+
+2. Students open an AI voice chatbot at home.
+
+<br>
+
+3. Students talk to the AI for 3 minutes.
+
+<br>
+
+4. AI provides instant feedback.
+
+<br>
+
+5. Students submit a screenshot of the feedback.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ACTIVITY 3 -->
+
+<div class="activity-card">
+
+<img src="images/SELFRECORDING.jpg">
+
+<div class="activity-body">
+
+<div class="activity-number">3</div>
+
+<h3>Asynchronous Video Introductions</h3>
+
+<div class="hover-text">
+
+Hover to read
+
+</div>
+
+<div class="activity-content">
+
+<p>
+
+<strong>Objective:</strong>
+Produce spoken language at own pace.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Tools:</strong>
+Flip App
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Description:</strong>
+
+<br><br>
+
+1. Teacher posts a prompt on a digital board.
+
+<br>
+
+2. Students record a 1-minute video.
+
+<br>
+
+3. Upload the final video.
+
+<br>
+
+4. Watch and leave positive comments.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ACTIVITY 4 -->
+
+<div class="activity-card">
+
+<img src="images/STUDENTSVIRTUALDISCUSSION.jpg">
+
+<div class="activity-body">
+
+<div class="activity-number">4</div>
+
+<h3>Collaborative Breakout Rooms</h3>
+
+<div class="hover-text">
+
+Hover to read
+
+</div>
+
+<div class="activity-content">
+
+<p>
+
+<strong>Objective:</strong>
+Work in teams to create short dialogues.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Tools:</strong>
+Padlet / Teams
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Description:</strong>
+
+<br><br>
+
+1. Teacher divides students into breakout rooms (4-5 people).
+
+<br>
+
+2. Students discuss and write a short story on a digital board.
+
+<br>
+
+3. Teacher visits rooms to monitor.
+
+<br>
+
+4. Groups share their favorite part with the class.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ACTIVITY 5 -->
+
+<div class="activity-card">
+
+<img src="images/STUDENTSWRITTINGSTORY.jpg">
+
+<div class="activity-body">
+
+<div class="activity-number">5</div>
+
+<h3>Interactive Storytelling</h3>
+
+<div class="hover-text">
+
+Hover to read
+
+</div>
+
+<div class="activity-content">
+
+<p>
+
+<strong>Objective:</strong>
+Collaboratively create and narrate short stories.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Tools:</strong>
+Google Docs / Vocaroo
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Description:</strong>
+
+<br><br>
+
+1. Students use a collaborative document to write a story.
+
+<br>
+
+2. Each records themselves narrating a specific part.
+
+<br>
+
+3. Group provides brief, positive peer feedback.
+
+<br>
+
+4. Optional sharing with the class.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
 </section>
+
+<!-- =========================
+ASSESSMENT
+========================= -->
 
 <section class="info-section">
 
@@ -462,17 +845,26 @@ Kahoot / Quizizz
 
 <p>
 
-Continuous formative assessment through gamified participation,
-AI speaking practice,
-peer feedback,
-video submissions,
-and collaborative storytelling activities.
+<strong>Methods:</strong>
+Continuous Formative Assessment.
+
+<br><br>
+
+Real-time feedback in gamified activities (Kahoot).
+
+<br><br>
+
+Peer-assessment and self-assessment for speaking activities (AI Chatbot and Video Boards), prior to the teacher's final feedback.
 
 </p>
 
 </div>
 
 </section>
+
+<!-- =========================
+IMPLEMENTATION
+========================= -->
 
 <section class="info-section">
 
@@ -482,16 +874,33 @@ and collaborative storytelling activities.
 
 <p>
 
-16-week implementation integrating AI tools,
-gamification strategies,
-asynchronous speaking activities,
-and collaborative virtual interaction.
+<strong>Timeline:</strong>
+16-Week progressive plan.
+
+<br><br>
+
+<strong>Weeks 1-4:</strong>
+Activity 1 (Anonymous Gamified Grammar).
+
+<br><br>
+
+<strong>Weeks 5-10:</strong>
+Activities 2 and 3 (AI Conversation Buddy & Asynchronous Video Introductions).
+
+<br><br>
+
+<strong>Weeks 11-16:</strong>
+Activities 4 and 5 (Interactive Storytelling with Peer Feedback & Collaborative Breakout Rooms).
 
 </p>
 
 </div>
 
 </section>
+
+<!-- =========================
+CONCLUSIONS
+========================= -->
 
 <section>
 
@@ -510,14 +919,17 @@ Integrates Gamification and AI to lower the
 
 <br><br>
 
-Transforms intimidating virtual classes into safe,
-dynamic, and private practice environments.
+Transforms intimidating virtual classes into safe, dynamic, and private practice environments.
 
 </p>
 
 </div>
 
 </section>
+
+<!-- =========================
+REFERENCES
+========================= -->
 
 <section>
 
@@ -526,17 +938,25 @@ dynamic, and private practice environments.
 <h3>References</h3>
 
 <p>
+
 Edmett, A., Ichaporia, N., Crompton, H., & Crichton, R. (2023).
+
 Artificial intelligence and English language teaching:
 Preparing for the future.
+
 British Council.
+
 </p>
 
 <p>
+
 Laura-De La Cruz, K. M., et al. (2023).
+
 Use of Gamification in English Learning in Higher Education:
 A Systematic Review.
-Journal of Technology and Science Education.
+
+Journal of Technology and Science Education, 13(2), 480–497.
+
 </p>
 
 </div>
@@ -545,12 +965,18 @@ Journal of Technology and Science Education.
 
 </div>
 
+<!-- =========================
+FOOTER
+========================= -->
+
 <footer>
 
 Todos los derechos reservados © Kellys De La Ossa.
+
 Esta página interactiva fue elaborada con IA ChatGPT.
 
 </footer>
 
 </body>
+
 </html>
